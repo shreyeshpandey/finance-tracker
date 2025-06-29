@@ -1,0 +1,131 @@
+/* src/styles/Dashboard.css */
+.dashboard-container {
+ padding: 2rem;
+ max-width: 1200px;
+ margin: auto;
+ background-color: #fafafa;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+ text-align: center;
+ margin-bottom: 1.5rem;
+ color: #333;
+}
+
+.filters {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 1rem;
+ justify-content: space-between;
+ margin-bottom: 1rem;
+}
+
+.filters input,
+.filters select {
+ flex: 1 1 200px;
+ padding: 0.6rem;
+ border: 1px solid #ccc;
+ border-radius: 6px;
+ font-size: 1rem;
+}
+
+.summary-box {
+ background-color: #e7f0ff;
+ padding: 1rem 2rem;
+ margin: 1rem 0;
+ border-left: 6px solid #2196f3;
+ border-radius: 8px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ gap: 1rem;
+}
+
+.summary-box p {
+ margin: 0;
+ font-weight: 600;
+ font-size: 1rem;
+}
+
+.txn-table {
+ width: 100%;
+ border-collapse: collapse;
+ margin-top: 1.5rem;
+ overflow-x: auto;
+ display: block;
+}
+
+.txn-table thead {
+ background-color: #3f51b5;
+ color: white;
+}
+
+.txn-table th,
+.txn-table td {
+ padding: 0.75rem 1rem;
+ text-align: left;
+ border: 1px solid #ddd;
+ min-width: 120px;
+}
+
+.txn-table td .credit {
+ color: green;
+ font-weight: bold;
+}
+
+.txn-table td .debit {
+ color: red;
+ font-weight: bold;
+}
+
+.txn-table td button {
+ background-color: #1976d2;
+ color: white;
+ border: none;
+ padding: 0.4rem 0.7rem;
+ font-size: 0.9rem;
+ border-radius: 4px;
+ cursor: pointer;
+}
+
+.txn-table td button:hover {
+ background-color: #1565c0;
+}
+
+.cancel-btn {
+ background-color: #f44336 !important;
+ margin-left: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+ .filters {
+   flex-direction: column;
+ }
+
+ .summary-box {
+   flex-direction: column;
+ }
+
+ .txn-table th,
+ .txn-table td {
+   font-size: 0.9rem;
+ }
+}
+
+@media screen and (max-width: 480px) {
+ .dashboard-container {
+   padding: 1rem;
+ }
+
+ .txn-table th,
+ .txn-table td {
+   font-size: 0.8rem;
+   padding: 0.4rem;
+ }
+
+ .txn-table td button {
+   font-size: 0.75rem;
+   padding: 0.3rem 0.5rem;
+ }
+}
