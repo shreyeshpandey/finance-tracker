@@ -1,3 +1,4 @@
+/* src/styles/Navbar.css */
 .navbar {
  background-color: #007bff;
  color: white;
@@ -5,6 +6,7 @@
  display: flex;
  justify-content: space-between;
  align-items: center;
+ flex-wrap: wrap;
 }
 
 .navbar-logo {
@@ -14,13 +16,25 @@
  text-decoration: none;
 }
 
+.nav-links {
+ display: flex;
+ gap: 1rem;
+ margin-top: 0.5rem;
+}
+
 .nav-links a {
  color: white;
  text-decoration: none;
- margin-left: 1rem;
  font-weight: bold;
+ position: relative;
 }
 
-.nav-links a.active {
- text-decoration: underline;
+.nav-links a.active::after {
+ content: '';
+ position: absolute;
+ width: 100%;
+ height: 2px;
+ bottom: -4px;
+ left: 0;
+ background-color: white;
 }

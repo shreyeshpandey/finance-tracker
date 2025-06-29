@@ -1,3 +1,4 @@
+// src/pages/Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
@@ -9,7 +10,7 @@ export default function Home() {
       <p>Track, filter, and export all your site transactions easily.</p>
 
       <div className="home-buttons">
-        <Link to="/add">
+        <Link to="/transactions">
           <button className="home-button">➕ Add Transaction</button>
         </Link>
         <Link to="/dashboard">

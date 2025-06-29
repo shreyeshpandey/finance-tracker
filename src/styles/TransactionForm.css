@@ -1,87 +1,130 @@
+/* TransactionForm.css */
+
 .transaction-form {
- background-color: #f9f9f9;
- padding: 1.5rem;
- border-radius: 12px;
- box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
- display: flex;
- flex-direction: column;
- gap: 1rem;
- max-width: 600px;
- margin: 0 auto;
- width: 100%;
- box-sizing: border-box;
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Two-column groups */
+.transaction-form .form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .transaction-form .form-group {
- display: flex;
- flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
 }
 
 .transaction-form label {
- font-weight: 500;
- margin-bottom: 0.4rem;
- color: #333;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #333;
 }
 
 .transaction-form input,
 .transaction-form select,
 .transaction-form textarea {
- padding: 0.6rem;
- border-radius: 8px;
- border: 1px solid #ccc;
- font-size: 1rem;
- box-sizing: border-box;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
 }
 
+.transaction-form input:focus,
+.transaction-form select:focus,
+.transaction-form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Cheque fields & textarea */
 .transaction-form textarea {
- resize: vertical;
- min-height: 80px;
+  resize: vertical;
+  min-height: 80px;
 }
 
+/* Action buttons */
 .transaction-form .form-actions {
- display: flex;
- justify-content: flex-end;
- gap: 1rem;
- margin-top: 1rem;
- flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .transaction-form button {
- padding: 0.6rem 1.2rem;
- font-size: 1rem;
- border: none;
- border-radius: 8px;
- cursor: pointer;
- transition: background-color 0.2s ease;
- white-space: nowrap;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
 }
 
 .transaction-form button[type='submit'] {
- background-color: #28a745;
- color: white;
+  background-color: #28a745;
+  color: white;
 }
 
 .transaction-form .cancel-btn {
- background-color: #ddd;
- color: #333;
+  background-color: #ddd;
+  color: #333;
 }
 
 .transaction-form button[type='submit']:hover {
- background-color: #218838;
+  background-color: #218838;
 }
 
 .transaction-form .cancel-btn:hover {
- background-color: #bbb;
+  background-color: #bbb;
 }
 
-/* Responsive on small screens */
-@media screen and (max-width: 480px) {
- .transaction-form .form-actions {
-   flex-direction: column;
-   align-items: stretch;
- }
+/* Validation error text */
+.error-text {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
 
- .transaction-form button {
-   width: 100%;
- }
+/* Optional tooltip */
+.tooltip {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Responsive stacking on small screens */
+@media screen and (max-width: 600px) {
+  .transaction-form .form-row {
+    flex-direction: column;
+  }
+
+  .transaction-form .form-group {
+    width: 100%;
+  }
+
+  .transaction-form .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .transaction-form button {
+    width: 100%;
+  }
 }
